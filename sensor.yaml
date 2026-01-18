@@ -1,0 +1,10 @@
+#vto
+- platform: dahua_vto
+  name: Dahua VTO
+  host: 192.168.68.200
+  port: 80
+  username: admin
+  password: admin123
+  scan_interval: 5
+
+
