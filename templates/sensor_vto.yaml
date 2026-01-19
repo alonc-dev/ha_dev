@@ -1,0 +1,14 @@
+#Create a timer:
+timer:
+  vto_door_status:
+    name: VTODoorStatus
+    icon: mdi:timer
+
+
+#VTO sensor
+-binary_sensor:
+  - default_entity_id: sensor.vto_door_status
+    icon: mdi:doorbell-video
+    name: VTO Door Status
+    state: '{{ is_state(''timer.vto_door_status'', ''active'') }}'
+

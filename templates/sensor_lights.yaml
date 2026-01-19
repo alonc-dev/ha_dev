@@ -1,0 +1,10 @@
+#for light sensors
+- sensor:
+  - unit_of_measurement: 'on'
+    default_entity_id: sensor.number_of_lights
+    state: "{% set lights = [
+        states.switch.shellyplus1pm_4855199c0d48_light_garden,
+        states.switch.light_suka,
+        ] %}
+        {{ lights | selectattr('state','eq','on') | list | count }}"
+    name: number_of_lights
