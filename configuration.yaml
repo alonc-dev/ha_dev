@@ -33,3 +33,15 @@ homeassistant:
   allowlist_external_dirs:
     - '/tmp/'
     - '/config/tmp/'
+
+#to allow backup dashboard in git
+lovelace:
+  mode: storage # Keep your existing UI dashboards
+  dashboards:
+    my-yaml-dashboard:
+      mode: yaml
+      title: My Git Dashboard
+      icon: mdi:github
+      show_in_sidebar: true
+      filename: dashboards_backup/my_git_dashboard.yaml
+

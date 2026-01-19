@@ -1,0 +1,1343 @@
+#snapshot 19/01/2026 
+views:
+  - title: Home AH
+    path: home-ah
+    icon: mdi:home
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 756738ec40cb4d0cbdb8f8463a536c33
+      - user: 451a1f4421a44d1b9a8b8fe1d03d557c
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: automation.vto_open_gate
+            name: Gate
+            icon: mdi:door-open
+            icon_color: deep-purple
+          - type: conditional
+            conditions:
+              - condition: numeric_state
+                entity: sensor.number_of_lights
+                above: 0
+            chip:
+              type: action
+              tap_action:
+                action: navigate
+                navigation_path: /lovelace/light
+              icon: mdi:lightbulb-alert-outline
+          - type: spacer
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: switch.shellyplus1pm_4855199c0d48_light_garden
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.shellyplus1pm_4855199c0d48_light_garden
+              tap_action:
+                action: toggle
+              icon: mdi:lightbulb
+              icon_color: red
+          - type: conditional
+            conditions:
+              - entity: switch.light_suka
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.light_suka
+              icon: mdi:lightbulb
+              tap_action:
+                action: toggle
+              icon_color: red
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoom.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/shutter
+          - type: picture
+            image: /local/Kitchen.jpeg?v=3
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoomKids.jpeg?v=3
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kids-living-room
+          - type: picture
+            image: /local/AHRoom.jpeg?v=2
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/bed-room
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/MainGate.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/entrance
+          - type: picture
+            image: /local/Camera.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/camera
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/Warehouse.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/warehouse
+          - type: picture
+            image: /local/Temperature.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/temprature
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/Office.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/office
+          - type: picture
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/liron
+            image: /local/LironRoom.jpeg?v=1
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/sapir
+            image: /local/SapirRoom.jpeg?v=1
+          - type: picture
+            image: /local/TomerRoom.jpeg?v=2
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/tomer
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/Sensor.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/security
+          - type: picture
+            image: /local/Graph.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/graphs
+  - title: Liron Dasboard
+    path: liron_dashboard
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: bc7a83281d6e407bb4736000994040c0
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    icon: mdi:folder-home-outline
+    badges: []
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: automation.vto_open_gate
+            name: Gate
+            icon: mdi:door-open
+            icon_color: deep-purple
+          - type: conditional
+            conditions:
+              - condition: numeric_state
+                entity: sensor.number_of_lights
+                above: 0
+            chip:
+              type: action
+              tap_action:
+                action: navigate
+                navigation_path: /lovelace/light
+              icon: mdi:lightbulb-alert-outline
+          - type: spacer
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: switch.shellyplus1pm_4855199c0d48_light_garden
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.shellyplus1pm_4855199c0d48_light_garden
+              tap_action:
+                action: toggle
+              icon: mdi:lightbulb
+              icon_color: red
+          - type: conditional
+            conditions:
+              - entity: switch.light_suka
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.light_suka
+              icon: mdi:lightbulb
+              tap_action:
+                action: toggle
+              icon_color: red
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoom.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/shutter
+          - type: picture
+            image: /local/Kitchen.jpeg?v=3
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoomKids.jpeg?v=4
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kids-living-room
+          - type: picture
+            image: /local/LironRoom.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/liron
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/MainGate.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/entrance
+          - type: picture
+            image: /local/Camera.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/camera
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/Warehouse.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/warehouse
+          - type: picture
+            image: /local/Temperature.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/temprature
+  - title: Sapir Dashboard
+    path: sapir_dashboard
+    icon: mdi:folder-home-outline
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+      - user: 4d0fa6c7aae344f9acb64244be0c0363
+    badges: []
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: automation.vto_open_gate
+            name: Gate
+            icon: mdi:door-open
+            icon_color: deep-purple
+          - type: conditional
+            conditions:
+              - condition: numeric_state
+                entity: sensor.number_of_lights
+                above: 0
+            chip:
+              type: action
+              tap_action:
+                action: navigate
+                navigation_path: /lovelace/light
+              icon: mdi:lightbulb-alert-outline
+          - type: spacer
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: switch.shellyplus1pm_4855199c0d48_light_garden
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.shellyplus1pm_4855199c0d48_light_garden
+              tap_action:
+                action: toggle
+              icon: mdi:lightbulb
+              icon_color: red
+          - type: conditional
+            conditions:
+              - entity: switch.light_suka
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.light_suka
+              icon: mdi:lightbulb
+              tap_action:
+                action: toggle
+              icon_color: red
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoom.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/shutter
+          - type: picture
+            image: /local/Kitchen.jpeg?v=3
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoomKids.jpeg?v=4
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kids-living-room
+          - type: picture
+            image: /local/SapirRoom.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/sapir
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/MainGate.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/entrance
+          - type: picture
+            image: /local/Camera.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/camera
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/Warehouse.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/warehouse
+          - type: picture
+            image: /local/Temperature.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/temprature
+  - title: Tomer Dashboard
+    path: tomer_dashboard
+    icon: mdi:folder-home-outline
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+      - user: 553661d761764657943da803e8720fe5
+    badges: []
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: automation.vto_open_gate
+            name: Gate
+            icon: mdi:door-open
+            icon_color: deep-purple
+          - type: conditional
+            conditions:
+              - condition: numeric_state
+                entity: sensor.number_of_lights
+                above: 0
+            chip:
+              type: action
+              tap_action:
+                action: navigate
+                navigation_path: /lovelace/light
+              icon: mdi:lightbulb-alert-outline
+          - type: spacer
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: switch.shellyplus1pm_4855199c0d48_light_garden
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.shellyplus1pm_4855199c0d48_light_garden
+              tap_action:
+                action: toggle
+              icon: mdi:lightbulb
+              icon_color: red
+          - type: conditional
+            conditions:
+              - entity: switch.light_suka
+                state_not: 'off'
+            chip:
+              type: entity
+              entity: switch.light_suka
+              icon: mdi:lightbulb
+              tap_action:
+                action: toggle
+              icon_color: red
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoom.jpeg?v=1
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/shutter
+          - type: picture
+            image: /local/Kitchen.jpeg?v=3
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/LivingRoomKids.jpeg?v=4
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kids-living-room
+          - type: picture
+            image: /local/TomerRoom.jpeg?v=2
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/tomer
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/MainGate.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/entrance
+          - type: picture
+            image: /local/Camera.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/camera
+      - type: horizontal-stack
+        cards:
+          - type: picture
+            image: /local/Warehouse.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/warehouse
+          - type: picture
+            image: /local/Temperature.jpeg
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/temprature
+  - title: Living Room
+    path: shutter
+    icon: mdi:sofa-outline
+    visible: []
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.shellyplus2pm_c049ef87de84_main_livingroom
+              - entity: cover.shelly2pmg3_d0cf13da8fe4
+            show_header_toggle: true
+            state_color: true
+          - type: tile
+            entity: cover.shellyplus2pm_c049ef87de84_main_livingroom
+            features_position: bottom
+            vertical: false
+          - type: tile
+            entity: cover.shelly2pmg3_d0cf13da8fe4
+            vertical: false
+            features_position: bottom
+      - type: entities
+        entities:
+          - entity: switch.shellyplus1pm_4855199c0d48_light_garden
+          - entity: sensor.shellyplus1pm_4855199c0d48_light_garden_power
+        state_color: true
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - remote.samsung_8_series_75
+          - type: media-control
+            entity: media_player.samsung_8_series_75
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.shutters_floor_0
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Shatter Kids Close
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.shutter_floor_1_close
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Shatter Floor 1 Close
+  - title: Boiler Room
+    path: warehouse
+    icon: mdi:water-boiler-alert
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - type: gauge
+        entity: sensor.shelly1pmg3_34cdb0797ad4_temperature_2
+        unit: oC
+        min: 10
+        max: 65
+        needle: false
+        severity:
+          green: 0
+          yellow: 0
+          red: 0
+      - type: history-graph
+        entities:
+          - entity: sensor.shelly1pmg3_34cdb0797ad4_temperature_2
+      - type: entities
+        entities:
+          - sensor.switcher_touch_4c7c_current
+          - sensor.switcher_touch_4c7c_power
+          - sensor.switcher_touch_4c7c_remaining_time
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: perform-action
+              perform_action: switcher_kis.turn_on_with_timer
+              target:
+                device_id: 7f3ae0a9f6700f6ea1a5bdf7f741a1fd
+              data:
+                timer_minutes: 10
+            icon: mdi:gesture-tap-button
+            show_state: false
+            name: Switcher 10min
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: perform-action
+              target:
+                device_id: 7f3ae0a9f6700f6ea1a5bdf7f741a1fd
+              perform_action: switcher_kis.turn_on_with_timer
+              data:
+                timer_minutes: 20
+            icon: mdi:button-pointer
+            show_state: false
+            name: Switcher 20min
+      - type: history-graph
+        entities:
+          - entity: sensor.switcher_touch_4c7c_power
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.boiler_room_temperature
+          - entity: sensor.boiler_room_humidity
+          - entity: sensor.boiler_room_battery
+        title: Boiler Room Temp
+      - type: history-graph
+        entities:
+          - entity: sensor.boiler_room_temperature
+          - entity: sensor.boiler_room_humidity
+      - type: entities
+        entities:
+          - entity: sensor.boiler_door_battery
+          - entity: binary_sensor.boiler_door_opening
+      - type: entities
+        entities:
+          - binary_sensor.shelly1pmg3_34cdb0797ad4_overheating
+          - binary_sensor.shelly1pmg3_34cdb0797ad4_overcurrent
+          - binary_sensor.shelly1pmg3_34cdb0797ad4_overpowering
+      - type: entities
+        entities:
+          - switch.shelly1pmg3_34cdb0797ad4
+      - type: history-graph
+        entities:
+          - entity: sensor.shelly1pmg3_34cdb0797ad4_power
+          - entity: sensor.shelly1pmg3_34cdb0797ad4_energy
+      - show_name: true
+        show_icon: true
+        type: button
+        entity: switch.switcher_touch_4c7c
+        name: Switcher
+        show_state: false
+  - title: Kids Living Room
+    path: kids-living-room
+    icon: mdi:sofa-single-outline
+    visible: []
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.shellyplus2pm_c049ef864d04
+              - entity: sensor.shellyplus2pm_c049ef864d04_power
+            show_header_toggle: true
+            state_color: true
+          - type: tile
+            entity: cover.shellyplus2pm_c049ef864d04
+      - type: entities
+        entities:
+          - entity: switch.shellyplus1pm_4855199c0d48_light_garden
+          - entity: sensor.shellyplus1pm_4855199c0d48_light_garden_power
+          - entity: sensor.shellyplus1pm_4855199c0d48_light_garden_energy
+        state_color: true
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: media-control
+            entity: media_player.cohenv6a
+          - type: media-control
+            entity: media_player.cohenv6a_zone2
+      - type: media-control
+        entity: media_player.lg_webos_smart_tv
+  - title: Kitchen
+    path: kitchen
+    icon: mdi:faucet-variant
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.shutter_kitchen
+                secondary_info: position
+              - entity: cover.shutter_kitchen_table
+                secondary_info: position
+              - entity: cover.shelly2pmg3_d0cf13cf2798
+              - entity: cover.shellyplus2pm_90380c35ac44
+                secondary_info: position
+            show_header_toggle: true
+            state_color: true
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: switch.light_suka
+              - entity: sensor.light_suka_power
+              - entity: sensor.light_suka_energy
+            show_header_toggle: false
+            state_color: true
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: cover.shutter_kitchen
+            features_position: bottom
+            vertical: false
+          - type: tile
+            entity: cover.shutter_kitchen_table
+            features_position: bottom
+            vertical: false
+          - type: tile
+            entity: cover.shelly2pmg3_d0cf13cf2798
+            vertical: false
+            features_position: bottom
+          - type: tile
+            entity: cover.shellyplus2pm_90380c35ac44
+        title: 'Kitchen '
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.kitchen_temperature_temperature
+          - entity: sensor.kitchen_temperature_humidity
+          - entity: sensor.kitchen_temperature_battery
+        title: Kitchen
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - remote.samsung_tv_ah
+            title: Samsung TV AH
+          - type: media-control
+            entity: media_player.tv_samsung_tv_ah
+          - type: media-control
+            entity: media_player.samsung_tv_ah
+  - title: Camera
+    path: camera
+    icon: mdi:webcam
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - show_state: false
+        show_name: false
+        camera_view: auto
+        type: picture-entity
+        entity: camera.maingate_main
+  - title: Entrance
+    path: entrance
+    icon: mdi:door-closed-lock
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - show_state: true
+        show_name: true
+        camera_view: auto
+        fit_mode: cover
+        type: picture-entity
+        entity: camera.maingate_mediaprofile_channel1_mainstream
+        name: Main Gate
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: perform-action
+              target: {}
+              perform_action: dahua_vto.open_door
+              data:
+                timeout: 5
+                short_number: HA
+                entity_id: sensor.dahua_vto
+                channel: 1
+            name: Open Gate
+            icon: mdi:doorbell
+          - show_name: true
+            show_icon: true
+            type: button
+            name: Open Gate+Shutter
+            icon: mdi:doorbell-video
+            tap_action:
+              action: perform-action
+              perform_action: automation.turn_on
+              target:
+                entity_id: automation.open_gate_shutter
+              data: {}
+      - type: history-graph
+        entities:
+          - entity: sensor.dahua_vto
+          - entity: sensor.vto_door_status
+        title: Dahua VTO
+      - type: entities
+        entities:
+          - entity: sensor.dahua_vto
+      - type: entities
+        entities:
+          - entity: number.alarm_ts0601_alarm_duration
+            name: Alarm duration
+          - entity: select.alarm_ts0601_alarm_ringtone
+            name: Alarm ringtone
+          - entity: select.alarm_ts0601_alarm_volume
+            name: Alarm volume
+          - entity: switch.alarm_ts0601_siren_on
+          - entity: update.alarm_ts0601_firmware
+            name: Firmware
+        title: Alarm_TS0601
+  - title: Temprature
+    path: temprature
+    icon: mdi:coolant-temperature
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - entity: sensor.kitchen_temperature_temperature
+          - entity: sensor.ah_room_temperature_temperature
+          - entity: sensor.alon_office_temperature_temperature
+          - entity: sensor.hagit_temperature_temperature
+          - entity: sensor.garden_temperature_temperature
+          - entity: sensor.living_room_kids_temperature_temperature
+          - entity: sensor.sapir_temperature_temperature
+          - entity: sensor.tomer_temperature_temperature
+          - entity: sensor.boiler_room_temperature
+      - type: entities
+        entities:
+          - entity: sensor.kitchen_temperature_humidity
+          - entity: sensor.ah_room_temperature_humidity
+          - entity: sensor.alon_office_temperature_humidity
+          - entity: sensor.hagit_temperature_humidity
+          - entity: sensor.garden_temperature_humidity
+          - entity: sensor.living_room_kids_temperature_humidity
+          - entity: sensor.sapir_temperature_humidity
+          - entity: sensor.tomer_temperature_humidity
+          - entity: sensor.boiler_room_humidity
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.kitchen_temperature_temperature
+          - entity: sensor.kitchen_temperature_humidity
+          - entity: sensor.kitchen_temperature_battery
+        title: Kitchen
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.living_room_kids_temperature_temperature
+            name: Temperature
+          - entity: sensor.living_room_kids_temperature_humidity
+            name: Humidity
+          - entity: sensor.living_room_kids_temperature_battery
+        title: Living Room Kids Temperature
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.garden_temperature_temperature
+            name: Temperature
+          - entity: sensor.garden_temperature_humidity
+            name: Humidity
+          - entity: sensor.garden_temperature_battery
+        title: Garden Temperature
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.sapir_temperature_temperature
+            name: Temperature
+          - entity: sensor.sapir_temperature_humidity
+            name: Humidity
+          - entity: sensor.sapir_temperature_battery
+        title: Sapir Temperature
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.tomer_temperature_temperature
+            name: Temperature
+          - entity: sensor.tomer_temperature_humidity
+            name: Humidity
+          - entity: sensor.tomer_temperature_battery
+        title: Tomer Temperature
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.ah_room_temperature_temperature
+          - entity: sensor.ah_room_temperature_humidity
+          - entity: sensor.ah_room_temperature_battery
+        title: AH Room
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.alon_office_temperature_temperature
+          - entity: sensor.alon_office_temperature_humidity
+          - entity: sensor.alon_office_temperature_battery
+        title: Alon Office
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.hagit_temperature_temperature
+          - entity: sensor.hagit_temperature_humidity
+          - entity: sensor.hagit_temperature_battery
+        title: Hagit Office
+      - show_name: false
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.boiler_room_temperature
+          - entity: sensor.boiler_room_humidity
+          - entity: sensor.boiler_room_battery
+        title: Boiler Room
+      - type: entities
+        entities:
+          - entity: sensor.sun_next_dawn
+            name: Next dawn
+          - entity: sensor.sun_next_dusk
+            name: Next dusk
+          - entity: sensor.sun_next_midnight
+            name: Next midnight
+          - entity: sensor.sun_next_noon
+            name: Next noon
+          - entity: sensor.sun_next_rising
+            name: Next rising
+          - entity: sensor.sun_next_setting
+            name: Next setting
+        title: Sun
+      - type: entities
+        entities:
+          - sun.sun
+  - title: Bed room
+    path: bed-room
+    icon: mdi:bed
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.shutter_ah_room
+              - entity: sensor.shutter_ah_room_power
+            show_header_toggle: false
+          - type: tile
+            entity: cover.shutter_ah_room
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - remote.samsung_au9000_50_tv
+            title: Samsung AU9000 50 TV
+          - type: media-control
+            entity: media_player.samsung_au9000_50_tv
+  - title: Security
+    path: security
+    icon: mdi:motion-sensor
+    visible: []
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - entity: binary_sensor.door_garden_warehouse_opening
+      - type: entities
+        entities:
+          - entity: sensor.boiler_door_battery
+          - entity: binary_sensor.boiler_door_opening
+      - type: entities
+        entities:
+          - entity: button.door_garden_warehouse_identify
+          - entity: sensor.door_garden_warehouse_battery
+          - entity: binary_sensor.door_garden_warehouse_opening
+          - entity: binary_sensor.door_garden_warehouse_opening_2
+      - type: entities
+        entities:
+          - switch.alarm_ts0601_switch
+  - title: Hagit
+    path: hagit
+    icon: mdi:account
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+      - user: 756738ec40cb4d0cbdb8f8463a536c33
+    badges: []
+    cards:
+      - type: tile
+        entity: sensor.hagit_iphone_battery_level
+  - title: Hagit Office
+    path: office
+    icon: mdi:chair-rolling
+    visible: []
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.shelly2pmg3_dcb4d9c2bfac
+                secondary_info: position
+              - entity: cover.shelly2pmg3_dcb4d9c03be4
+                secondary_info: position
+            show_header_toggle: true
+            state_color: true
+        title: Hagit’s Office Shutter
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: cover.shelly2pmg3_dcb4d9c2bfac
+            vertical: false
+            features_position: bottom
+          - type: tile
+            entity: cover.shelly2pmg3_dcb4d9c03be4
+            vertical: false
+            features_position: bottom
+      - graph: line
+        type: sensor
+        detail: 1
+        entity: sensor.hagit_temperature_temperature
+      - graph: line
+        type: sensor
+        detail: 1
+        entity: sensor.alon_office_temperature_temperature
+  - title: Graphs
+    path: graphs
+    icon: mdi:chart-histogram
+    visible:
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - type: history-graph
+        entities:
+          - entity: sensor.light_suka_energy
+          - entity: sensor.light_suka_power
+          - entity: sensor.light_garden_energy
+          - entity: sensor.light_garden_power
+      - chart_type: line
+        period: hour
+        type: statistics-graph
+        entities:
+          - sensor.garden_temperature_temperature
+          - sensor.living_room_kids_temperature_temperature
+          - sensor.sapir_temperature_temperature
+          - sensor.tomer_temperature_temperature
+        stat_types:
+          - mean
+      - chart_type: line
+        period: hour
+        type: statistics-graph
+        entities:
+          - sensor.kitchen_power
+          - sensor.halter_table_power
+          - sensor.shutter_zoola_power
+          - sensor.shutter_kitchen_power
+        stat_types:
+          - mean
+          - min
+          - max
+      - type: history-graph
+        entities:
+          - entity: sensor.shelter_bedroom_power
+          - entity: sensor.shelter_bedroom_energy
+  - title: Alon
+    path: alon
+    icon: mdi:account
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 5854f32afd14409cad1013e5c1f43bb3
+    badges: []
+    cards:
+      - type: tile
+        entity: sensor.alon_iphone_12_battery_level
+      - type: entities
+        entities:
+          - entity: sensor.alon_iphone_12_battery_level
+            name: Battery Level
+          - entity: sensor.alon_iphone_12_battery_state
+            name: Battery State
+          - entity: sensor.alon_iphone_12_bssid
+            name: BSSID
+          - entity: sensor.alon_iphone_12_connection_type
+            name: Connection Type
+          - entity: sensor.alon_iphone_12_geocoded_location
+            name: Geocoded Location
+          - entity: sensor.alon_iphone_12_last_update_trigger
+            name: Last Update Trigger
+          - entity: sensor.alon_iphone_12_sim_1
+            name: SIM 1
+          - entity: sensor.alon_iphone_12_sim_2
+            name: SIM 2
+          - entity: sensor.alon_iphone_12_ssid
+            name: SSID
+          - entity: sensor.alon_iphone_12_storage
+            name: Storage
+        title: Alon iPhone
+  - title: Liron
+    path: liron
+    visible: []
+    icon: mdi:account
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.liron_room
+              - entity: cover.liron_bathroom
+            show_header_toggle: true
+            state_color: true
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: cover.liron_room
+          - type: tile
+            entity: cover.liron_bathroom
+      - type: tile
+        show_entity_picture: true
+        entity: sensor.liron_iphone_battery_level
+      - type: media-control
+        entity: media_player.tv_liron_s_tv
+      - type: entities
+        entities:
+          - entity: device_tracker.liron_iphone
+          - entity: sensor.liron_iphone_connection_type
+          - entity: sensor.liron_iphone_sim_1
+          - entity: binary_sensor.liron_iphone_focus
+          - entity: sensor.liron_iphone_storage
+        title: Liron’s iPhone 14P
+  - title: Sapir
+    path: sapir
+    icon: mdi:account
+    visible: []
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.sapir_1
+              - entity: cover.sapir_2
+              - entity: cover.shellyplus2pm_c049ef8d7730_sapir_3
+            show_header_toggle: true
+            state_color: true
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: cover.sapir_1
+            features_position: bottom
+            vertical: false
+          - type: tile
+            entity: cover.sapir_2
+          - type: tile
+            entity: cover.shellyplus2pm_c049ef8d7730_sapir_3
+            features_position: bottom
+            vertical: false
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.sapir_temperature_temperature
+            name: Temperature
+          - entity: sensor.sapir_temperature_humidity
+            name: Humidity
+          - entity: sensor.sapir_temperature_battery
+        title: Sapir Temperature
+      - type: tile
+        entity: sensor.sapir_iphone_13pm_battery_level
+      - type: media-control
+        entity: media_player.rx_v479_d04e57_alon
+      - type: entities
+        entities:
+          - entity: device_tracker.sapir_iphone_13pm
+          - entity: sensor.sapir_iphone_13pm_connection_type
+          - entity: sensor.sapir_iphone_13pm_sim_1
+          - entity: sensor.sapir_iphone_13pm_storage
+        title: Sapir’s iPhone 13P MAX
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.shutter_floor_0_open
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Good Morning Sapir
+  - title: Tomer
+    path: tomer
+    icon: mdi:account
+    visible: []
+    badges: []
+    cards:
+      - type: light
+        entity: light.yeelight_ceiling1_0x36e2cd9
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.tomer
+              - entity: sensor.tomer_power
+            show_header_toggle: true
+            state_color: true
+          - type: tile
+            entity: cover.tomer
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.tomer_temperature_temperature
+            name: Temperature
+          - entity: sensor.tomer_temperature_humidity
+            name: Humidity
+          - entity: sensor.tomer_temperature_battery
+        title: Tomer Temperature
+      - type: tile
+        entity: sensor.tomer_iphone_battery_level
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - remote.tomer_apos_s_tv
+            title: Tomer&apos;s TV
+          - type: media-control
+            entity: media_player.tomer_apos_s_tv
+      - type: entities
+        entities:
+          - entity: device_tracker.tomer_iphone
+          - entity: sensor.tomer_iphone_connection_type
+          - entity: sensor.tomer_iphone_sim_1
+          - entity: sensor.tomer_iphone_storage
+        title: Tomer’s iPhone 12 Pro
+      - type: entities
+        entities:
+          - light.cozylife_ffff
+  - title: Shutters Kids
+    path: shutters-kids
+    icon: mdi:window-shutter-alert
+    visible:
+      - user: 756738ec40cb4d0cbdb8f8463a536c33
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 451a1f4421a44d1b9a8b8fe1d03d557c
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: cover.shutter_main_livingroom
+              - entity: cover.shellyplus2pm_c049ef864d04
+              - entity: cover.liron_room
+              - entity: cover.liron_bathroom
+              - entity: cover.sapir_1
+              - entity: cover.sapir_2
+              - entity: cover.sapir_3
+              - entity: cover.tomer
+            show_header_toggle: false
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: cover.shutter_main_livingroom
+          - type: tile
+            entity: cover.shellyplus2pm_c049ef864d04
+          - type: tile
+            entity: cover.liron_room
+          - type: tile
+            entity: cover.liron_bathroom
+          - type: tile
+            entity: cover.sapir_1
+          - type: tile
+            entity: cover.sapir_2
+          - type: tile
+            entity: cover.sapir_3
+          - type: tile
+            entity: cover.tomer
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.shutter_main_livingroom_power
+              - entity: sensor.shellyplus2pm_c049ef864d04_power
+              - entity: sensor.liron_room_power
+              - entity: sensor.liron_bathroom_power
+              - entity: sensor.sapir_1_power
+              - entity: sensor.sapir_2_power
+              - entity: sensor.sapir_3_power
+              - entity: sensor.tomer_power
+            show_header_toggle: false
+  - title: ShuttersAuto
+    path: shuttersauto
+    icon: mdi:window-shutter-auto
+    visible:
+      - user: 0c2b5ff11af14cb8bcfed250c97965cf
+      - user: 756738ec40cb4d0cbdb8f8463a536c33
+      - user: 451a1f4421a44d1b9a8b8fe1d03d557c
+    cards:
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.shutter_floor_0_open
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Good Morning Sapir
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.shutters_floor_0
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Shatter Kids Close
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.tag_tag_morning_shutter_is_scanned
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Shatter Floor 1 Open
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              target:
+                entity_id: automation.shutter_floor_1_close
+              data:
+                skip_condition: true
+            entity: switch.enhancer_2
+            name: Shatter Floor 1 Close
+      - type: tile
+        entity: switch.party_mode
+  - title: Light
+    path: light
+    visible: []
+    icon: mdi:lightbulb
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: switch.light_suka
+              - entity: sensor.light_suka_power
+              - entity: sensor.light_suka_energy
+            show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: switch.shellyplus1pm_4855199c0d48_light_garden
+          - entity: sensor.shellyplus1pm_4855199c0d48_light_garden_power
+          - entity: sensor.shellyplus1pm_4855199c0d48_light_garden_energy
+      - type: light
+        entity: light.yeelight_ceiling1_0x36e2cd9
+title: Cohen Dashboard
