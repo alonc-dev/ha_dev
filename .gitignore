@@ -1,4 +1,7 @@
 home-assistant.log*
 *.db*
+.ha*
+.HA*
 .storage/
 secrets.yaml
+tmp/
