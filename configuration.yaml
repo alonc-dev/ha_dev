@@ -1,0 +1,35 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# enable the cloud integration
+cloud:
+
+# enable homekit
+homekit:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text-to-speech
+tts:
+  - platform: google_translate
+
+
+# includes (use "-"" foreach one)
+sensor: !include sensor.yaml
+light: !include light.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+browser:  !include browser.yaml
+automation: !include automations.yaml
+
+#template: !include template.yaml
+template: !include_dir_merge_list templates/
+
+# general
+homeassistant:
+  debug: true
+  allowlist_external_dirs:
+    - '/tmp/'
+    - '/config/tmp/'

@@ -1,0 +1,166 @@
+- id: '1689324612688'
+  alias: Shutter AH open at night (Setting)
+  description: ''
+  trigger:
+  - platform: time
+    at: sensor.sun_next_setting
+  condition: []
+  action:
+  - device_id: b220361a86c6a174e72169fb7e104a85
+    domain: cover
+    entity_id: 6c1b9959bfbf2ae75d1085aeb6da84b0
+    type: set_position
+    position: 100
+  mode: single
+- id: '1695411437409'
+  alias: Shutter AH close partial at noon (noon)
+  description: ''
+  triggers:
+  - at: sensor.sun_next_noon
+    trigger: time
+  conditions: []
+  actions:
+  - device_id: b220361a86c6a174e72169fb7e104a85
+    domain: cover
+    entity_id: 6c1b9959bfbf2ae75d1085aeb6da84b0
+    type: set_position
+    position: 9
+  mode: single
+- id: '1728647597906'
+  alias: Shutter Floor 0 Open 10:00
+  description: ''
+  triggers:
+  - trigger: time
+    at: '10:00:00'
+  conditions: []
+  actions:
+  - device_id: 1886fa5b1efca440bfe3e42af5f65be9
+    domain: cover
+    entity_id: 9e7e39f0392f83cfef48e46120349a65
+    type: open
+  mode: single
+- id: '1728647634310'
+  alias: Shutter Floor 0 Close 23:00
+  description: ''
+  triggers:
+  - trigger: time
+    at: '23:05:00'
+  conditions: []
+  actions:
+  - device_id: 1886fa5b1efca440bfe3e42af5f65be9
+    domain: cover
+    entity_id: 9e7e39f0392f83cfef48e46120349a65
+    type: close
+  mode: single
+- id: '1751629853165'
+  alias: VTO Open Gate
+  description: ''
+  triggers: []
+  conditions: []
+  actions:
+  - data:
+      timeout: 5
+      short_number: HA
+      entity_id: sensor.dahua_vto
+      channel: 1
+    action: dahua_vto.open_door
+  mode: single
+- id: '1751630176594'
+  alias: VTO Open Gate Shutter
+  description: ''
+  triggers: []
+  conditions: []
+  actions:
+  - data:
+      timeout: 5
+      short_number: HA
+      entity_id: sensor.dahua_vto
+      channel: 1
+    action: dahua_vto.open_door
+  - device_id: 8c6ce3f71e64a207c13deeb5832b7d0a
+    domain: cover
+    entity_id: 1dbb039f7fc2160db0ac96a5332da95c
+    type: open
+  mode: single
+- id: '1767964508922'
+  alias: Boiler Door Opened
+  description: ''
+  triggers:
+  - entity_id:
+    - binary_sensor.boiler_door_opening
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+    trigger: state
+  conditions: []
+  actions:
+  - device_id: 2135bf206e1a4fa223de694a6eab9db9
+    domain: mobile_app
+    type: notify
+    message: Boiler door opened
+  - device_id: d193fe523f8def149b69495faeeb7d96
+    domain: mobile_app
+    type: notify
+    message: Boiler door opened
+  mode: single
+- id: '1767975257487'
+  alias: VTO Sense - All
+  description: ''
+  triggers:
+  - event_type: dahua_vto
+    event_data:
+      Code: BackKeyLight
+    trigger: event
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.Data.State | int in [0] }}'
+      sequence: []
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.Data.State | int in [8] }}'
+      sequence:
+      - device_id: 2135bf206e1a4fa223de694a6eab9db9
+        domain: mobile_app
+        type: notify
+        message: Gate Opened (code="{{ trigger.event.data.Data.State }}")
+      - device_id: d193fe523f8def149b69495faeeb7d96
+        domain: mobile_app
+        type: notify
+        message: Gate Opened (code="{{ trigger.event.data.Data.State }}")
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.Data.State | int in [1, 2] }}'
+      sequence:
+      - action: switch.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.alarm_ts0601_siren_on
+      - device_id: 2135bf206e1a4fa223de694a6eab9db9
+        domain: mobile_app
+        type: notify
+        message: Doorbell Ring (code="{{ trigger.event.data.Data.State }}")
+      - device_id: d193fe523f8def149b69495faeeb7d96
+        domain: mobile_app
+        type: notify
+        message: Doorbell Ring (code="{{ trigger.event.data.Data.State }}")
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.Data.State | int in [5] }}'
+      sequence:
+      - device_id: 2135bf206e1a4fa223de694a6eab9db9
+        domain: mobile_app
+        type: notify
+        message: Call answered from VTH (code="{{ trigger.event.data.Data.State }}")
+    default:
+    - device_id: 2135bf206e1a4fa223de694a6eab9db9
+      domain: mobile_app
+      type: notify
+      message: VTO Unknown State (code="{{ trigger.event.data.Data.State }}")
+  mode: queued
