@@ -52,36 +52,6 @@
     entity_id: 9e7e39f0392f83cfef48e46120349a65
     type: close
   mode: single
-- id: '1751629853165'
-  alias: VTO Open Gate
-  description: ''
-  triggers: []
-  conditions: []
-  actions:
-  - data:
-      timeout: 5
-      short_number: HA
-      entity_id: sensor.dahua_vto
-      channel: 1
-    action: dahua_vto.open_door
-  mode: single
-- id: '1751630176594'
-  alias: VTO Open Gate Shutter
-  description: ''
-  triggers: []
-  conditions: []
-  actions:
-  - data:
-      timeout: 5
-      short_number: HA
-      entity_id: sensor.dahua_vto
-      channel: 1
-    action: dahua_vto.open_door
-  - device_id: 8c6ce3f71e64a207c13deeb5832b7d0a
-    domain: cover
-    entity_id: 1dbb039f7fc2160db0ac96a5332da95c
-    type: open
-  mode: single
 - id: '1767964508922'
   alias: Boiler Door Opened
   description: ''
